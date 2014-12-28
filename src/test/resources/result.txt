@@ -1,0 +1,45 @@
+sequenceOf(
+insertInto("STATS").row()
+.column("ID", 13)
+.column("USER_ID", 1)
+.column("X", 57.4)
+.column("Y", 0.31).end().build(),
+insertInto("STATS").row()
+.column("ID", 13)
+.column("USER_ID", 7)
+.column("X", 91.7)
+.column("Y", 5.15).end().build(),
+insertInto("STATS").row()
+.column("ID", 44)
+.column("USER_ID", 1)
+.column("X", 27.3)
+.column("Y", 0.18).end().build(),
+insertInto("STATS").row()
+.column("ID", 44)
+.column("USER_ID", 7)
+.column("X", 74.8)
+.column("Y", 2.11).end().build(),
+insertInto("STATS").row()
+.column("ID", 66)
+.column("USER_ID", 1)
+.column("X", 6.7)
+.column("Y", 2.10).end().build(),
+insertInto("STATS").row()
+.column("ID", 66)
+.column("USER_ID", 7)
+.column("X", 65.8)
+.column("Y", 4.52).end().build(),
+sql("UPDATE STATS SET X=54.2 WHERE ID=13;"),
+insertInto("USER").row()
+.column("ID", 66)
+.column("USERNAME", "ALBERT")
+.column("SIGNUP_DATE", LocalDate.parse("2014-12-14", DateTimeFormatter.ISO_LOCAL_DATE))
+.column("LAST_LOGIN_DATETIME", LocalDateTime.parse("2014-12-14T15:42:35", DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+.column("PREMIUM", true).end().build(),
+insertInto("USER").row()
+.column("ID", 66)
+.column("USERNAME", "ALPHONSE")
+.column("SIGNUP_DATE", LocalDate.parse("2014-12-14", DateTimeFormatter.ISO_LOCAL_DATE))
+.column("LAST_LOGIN_DATETIME", null)
+.column("PREMIUM", false).end().build()
+);
