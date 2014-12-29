@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class SqlFileToDbSetupTest {
@@ -16,7 +18,8 @@ public class SqlFileToDbSetupTest {
         final SqlFileToDbSetup sqlFileToDbSetup = new SqlFileToDbSetup();
 
         // When
-        final String dbSetupScript = sqlFileToDbSetup.transformFile("insert_data-test.sql");
+        final Path filePath = Paths.get(ClassLoader.getSystemResource("insert_data-test.sql").toURI());
+        final String dbSetupScript = sqlFileToDbSetup.transformFile(filePath.toFile());
 
         // Then
         final URI resultUri = ClassLoader.getSystemResource("result.txt").toURI();
