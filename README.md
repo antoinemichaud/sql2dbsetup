@@ -13,7 +13,7 @@ mvn package
 - In target you will find the executable jar `sql2dbsetup-0.1-SNAPSHOT.jar`.
 - Move it to the location you want it and launch :
 ```
-java -jar sql2dbsetup-0.1-SNAPSHOT.jar \<path_to_your_sql_file\>
+java -jar sql2dbsetup-0.1-SNAPSHOT.jar <path_to_your_sql_file>
 ```
 
 The result will be then printed in your console.
